@@ -1,5 +1,4 @@
 import React from 'react';
-import '../style/header/_header.scss'
 
 export function Header(){
 
@@ -7,7 +6,7 @@ export function Header(){
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="#">MyClone</a>
-            <form class="form-inline">
+            <form className="form-inline">
                 <input className="form-control mr-sm-2 mySearchInput" type="search" placeholder="Search" aria-label="Search"/>
                 <button className="btn btn-outline-primery my-2 my-sm-0 mySearchButton" type="submit">Search</button>
                 </form>
