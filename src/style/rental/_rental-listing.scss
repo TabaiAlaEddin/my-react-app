@@ -5,6 +5,11 @@
       margin-bottom: 20px;
     }
   
+    .rental-details-link {
+      &:hover{
+        text-decoration: none
+      }
+    }
     /* SINGLE CARD STYLES*/
     .bwm-card {
       border: none;

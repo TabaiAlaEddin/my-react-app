@@ -1,5 +1,5 @@
-
-const rentals = [{
+import {FETCH_RENTALS,FETCH_RENTAL_ID} from './types'
+const rentalList = [{
     id: 1,
     title: "Central Apartment",
     city: "New York",
@@ -52,9 +52,19 @@ const rentals = [{
     createdAt: "24/12/2017"
 }];
 
-export const rentalsReducer = (state=rentals,action)=>{
-    switch(action.type){
-        default:
-            return state;
+export const fetchRentals = () =>{
+    return{
+        type: FETCH_RENTALS,
+        rentals: rentalList  
+    }
+}
+
+export const fetchRentalbYId = (id) =>{
+
+   //const obj = rentalList.filter(rental => rental.id == id)
+    const obj = rentalList.find((rental) => rental.id == id)        
+    return{
+        type: FETCH_RENTAL_ID,
+        rental: obj
     }
 }

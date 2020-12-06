@@ -33,6 +33,8 @@
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px; }
+  #rentalListing .rental-details-link:hover {
+    text-decoration: none; }
   #rentalListing .bwm-card {
     border: none; }
     #rentalListing .bwm-card .card-block {
@@ -56,3 +58,12 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px; }
+
+.condo {
+  color: #dd1c1c; }
+
+.house {
+  color: #c99c0a; }
+
+.apartment {
+  color: #2c9631; }

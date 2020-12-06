@@ -7,9 +7,10 @@ import RentalListHooks from './components/rentalComponent/RentalListHooks';
 import RentalDetails from './components/rentalComponent/RentalDetails';
 import * as redux from 'redux';
 import {Provider} from 'react-redux';
+import { store } from './reducers';
 
 function App() {
-    const store = require('./reducers').init();
+    
     return (
         <Provider store={store}>
             <BrowserRouter>

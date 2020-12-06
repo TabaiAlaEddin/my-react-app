@@ -1,41 +1,29 @@
 import React , {useState , useEffect} from 'react'
-import { connect, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import RentalCardHooks from './RentalCardHooks'
+import { fetchRentals } from '../../actions'
+import * as actions from '../../actions'
 const RentalListHooks = () => {
-//const [rentals, setRentals] = useState([]);
 
-//  const state = useSelector(state => state.state)
-//  const useEffect(() => {
-//      console.log('mouneted')
-//      return () => {
-//        console.log('i m leaving')
-//      }
-//  }, [rental])
+const rentals = useSelector(state => state.rentals.data);
+const dispatch = useDispatch();
+useEffect(() => {
+    dispatch(fetchRentals())
+}, [dispatch])
 
- // useSelecor , useDispatch  => redux 
 
-// useEffect(() => {
-  //  setRentals(
-        
-   // )
-  //  return () => {
-  //      console.log('i m leaving')
- //   }
-//}, [])
+console.log(rentals)
 
-//const addRental = () => {
- //setRentals(oldState => [...oldState , 1]);
-//}
-
-const rentals = useSelector(state => state.rentals)
 return (
     <section id='rentalListing'>
                 <h1 className='page-title'>Your Home All Around the World</h1>
+                {rentals &&  
                 <div className='row'>
                    {rentals.map((rental,index) => {
                        return  <RentalCardHooks key={index} rental={rental} />
                    })}
-                </div>
+                </div>}
+               
    </section>
 )
 }
