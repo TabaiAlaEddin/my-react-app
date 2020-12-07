@@ -17,15 +17,60 @@ const RentalDetails = ()=>{
     console.log(id)
  
     return(
-<>
-    <h1>ID {rental && rental.id}</h1>
-    <h1>title: {rental && rental.title}</h1>
-    <h1>city: {rental && rental.city}</h1>
-    <Link to="/rentals">
-        <button>Back to list</button>
-    </Link>
 
-</>
+
+
+        
+<section id='rentalDetails'>
+  <div className='upper-section'>
+    <div className='row'>
+      <div className='col-md-6'>
+        <img src={rental&&rental.image} alt=''></img>
+      </div>
+      <div className='col-md-6'>
+        <img src={rental&&rental.image} alt=''></img>
+      </div>
+    </div>
+  </div>
+
+  <div className='details-section'>
+    <div className='row'>
+      <div className='col-md-8'>
+        <div className='rental'>
+          <h2 className={`rental-type ${rental&&rental.category}`}>{rental&&rental.shared} {rental&&rental.category}</h2>
+          <h1 className='rental-title'>{rental&&rental.title}</h1>
+          <h2 className='rental-city'>{rental&&rental.city}</h2>
+          <div className='rental-room-info'>
+            <span><i className='fa fa-building'></i>{rental&&rental.bedrooms} bedrooms</span>
+            <span><i className='fa fa-user'></i> {rental&&rental.bedrooms + 4} guests</span>
+            <span><i className='fa fa-bed'></i> {rental&&rental.bedrooms + 2} beds</span>
+          </div>
+          <p className='rental-description'>
+            {rental&&rental.description}
+          </p>
+          <hr></hr>
+          <div className='rental-assets'>
+            <h3 className='title'>Assets</h3>
+            <div className='row'>
+              <div className='col-md-6'>
+                <span><i className='fa fa-asterisk'></i> Cooling</span>
+                <span><i className='fa fa-thermometer'></i> Heating</span>
+                <span><i className='fa fa-location-arrow'></i> Iron</span>
+              </div>
+              <div className='col-md-6'>
+                <span><i className='fa fa-desktop'></i> Working area</span>
+                <span><i className='fa fa-cube'></i> Washing machine</span>
+                <span><i className='fa fa-cube'></i> Dishwasher</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='col-md-4'> BOOKING</div>
+    </div>
+  </div>
+</section>
+
     )
 
 }

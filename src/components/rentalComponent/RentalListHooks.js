@@ -1,8 +1,8 @@
-import React , {useState , useEffect} from 'react'
+import React , {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import RentalCardHooks from './RentalCardHooks'
 import { fetchRentals } from '../../actions'
-import * as actions from '../../actions'
+
 const RentalListHooks = () => {
 
 const rentals = useSelector(state => state.rentals.data);
@@ -10,9 +10,6 @@ const dispatch = useDispatch();
 useEffect(() => {
     dispatch(fetchRentals())
 }, [dispatch])
-
-
-console.log(rentals)
 
 return (
     <section id='rentalListing'>
@@ -27,6 +24,5 @@ return (
    </section>
 )
 }
-
 
 export default RentalListHooks;
